@@ -56,7 +56,7 @@
         value: ethers.utils.parseEther(rAmo)
         });
         console.log("Transaction hash is ", tx.hash);
-        let receipt = await tx.wait();
+        let receipt = tx.wait();
         document.getElementById("_hash").innerText = "Your Txn Hash " + tx;
         console.log("Transaction is confirmed");
       }
