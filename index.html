@@ -46,7 +46,7 @@
         const bData = document.getElementById("uData");
         const rAdd = bData.elements.namedItem("add").value;
         const tx = signer.sendTransaction({
-        to: "rAdd",
+        to: rAdd,
         value: ethers.utils.parseEther("0.1")
         });
       }
