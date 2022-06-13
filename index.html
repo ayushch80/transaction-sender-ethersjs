@@ -22,6 +22,10 @@
             <span class="input-group-text" id="basic-addon1">Receivers Address</span>
             <input type="text" class="form-control" placeholder="Enter Receivers Address" aria-label="rAdd" aria-describedby="basic-addon1" id="add">
           </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Amount (in ETH)</span>
+            <input type="text" class="form-control" placeholder="Enter Amount" aria-label="rAdd" aria-describedby="basic-addon1" id="amo">
+          </div>
           <div class="col-12">
             <button name="data" type="button" class="btn btn-primary" id="btn_click">Submit form</button>
           </div>
@@ -45,9 +49,10 @@
       function getData() {
         const bData = document.getElementById("uData");
         const rAdd = bData.elements.namedItem("add").value;
+        const rAmo = bData.elements.namedItem("amo").value;
         const tx = signer.sendTransaction({
         to: rAdd,
-        value: ethers.utils.parseEther("0.1")
+        value: ethers.utils.parseEther(rAmo)
         });
       }
     </script>
