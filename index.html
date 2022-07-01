@@ -51,12 +51,11 @@
         const bData = document.getElementById("uData");
         const rAdd = bData.elements.namedItem("add").value;
         const rAmo = bData.elements.namedItem("amo").value;
-        const tx = signer.sendTransaction({
+        const tx = async () => { signer.sendTransaction({
           to: rAdd,
           value: ethers.utils.parseEther(rAmo)
-          const txn = async () => { await tx.deployTransaction.wait();}
-          console.log(txn.transactionHash)
         });
+        console.log(tx.wait());
       }
 
     </script>
