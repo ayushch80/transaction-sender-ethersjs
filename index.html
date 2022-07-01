@@ -56,7 +56,8 @@
           value: ethers.utils.parseEther(rAmo)
         })}
         tx();
-        console.log(tx.hash);
+        const hash = async () => { await console.log(tx.hash);}
+        hash();
       }
 
     </script>
