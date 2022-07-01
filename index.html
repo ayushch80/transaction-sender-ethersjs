@@ -47,19 +47,17 @@
         }
       });
       document.getElementById("btn_click").addEventListener("click", getData);
-      function getData() {
+      async function getData() {
         const bData = document.getElementById("uData");
         const rAdd = bData.elements.namedItem("add").value;
         const rAmo = bData.elements.namedItem("amo").value;
-        const tx = async () => { signer.sendTransaction({
+        const tx = signer.sendTransaction({
           to: rAdd,
           value: ethers.utils.parseEther(rAmo)
-        })}
-        tx();
-        const hash = async () => { await console.log(tx.hash);}
-        hash();
-      }
-
+        });
+        hash = await tx.hash;
+        console.log(hash);
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
