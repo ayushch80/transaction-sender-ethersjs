@@ -76,10 +76,10 @@
         let txn = signer.sendTransaction({ to: rAdd, value: ethers.utils.parseEther(rAmo)});
         let tx = await txn;
         var hash_1 = `<p>Transaction Hash : ${tx.hash}</p>`;
-        $("_hash").html(hash_1);
+        $("._hash").html(hash_1);
         let receipt = await tx.wait();
         var hash_2 = `<p>Transaction is confirmed at hash ${tx.hash}</p>`;
-        $("_hash").html(hash_2);
+        $("._hash").html(hash_2);
         }
     </script>
 </body>
