@@ -62,7 +62,7 @@
       await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner()
       var userAddress = await signer.getAddress();
-      document.getElementById("userAdd").innerText = "Your Address is " + userAddress;
+      document.getElementById("userAdd").innerText = "Connected with " + userAddress;
       provider.on("network", (newNetwork, oldNetwork) => {
         if (oldNetwork) {
             window.location.reload();
