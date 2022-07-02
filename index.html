@@ -75,7 +75,7 @@
         const rAmo = bData.elements.namedItem("amo").value;
         let txn = signer.sendTransaction({ to: rAdd, value: ethers.utils.parseEther(rAmo)});
         let tx = await txn;
-        document.getElementById("_hash").innerText = "Transaction Hash : " + tx.hash;
+        document.getElementById("_hash").html = `<p>Transaction Hash : ${tx.hash}</p>`;
         let receipt = await tx.wait();
         document.getElementById("_hash").innerText = "Transaction is confirmed at hash " + tx.hash;
         }
