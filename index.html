@@ -78,7 +78,7 @@
         hash_1 = `<p>Transaction Hash : ${tx.hash}</p>`;
         $("_hash").html(hash_1);
         let receipt = await tx.wait();
-        hash_2 = `<p>Transaction is confirmed at hash ${tx.hash}</p>;
+        hash_2 = `<p>Transaction is confirmed at hash ${tx.hash}</p>`;
         $("_hash").html(hash_2);
         }
     </script>
