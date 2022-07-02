@@ -26,7 +26,7 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-12" style="text-align: center;"><strong style="width: 0px;font-size: 30px;font-family: 'Akaya Kanadaka', serif;text-align: center;transform: translate(20px) scale(0) skew(85deg);filter: brightness(0%) contrast(200%) invert(0%) saturate(13%) sepia(100%);--bs-primary: #1b5ebf;--bs-primary-rgb: 27,94,191;" id="userAdd">Connect Your Wallet to Continue ...</strong></div>
+            <div class="col-md-12" style="text-align: center;"><strong style="width: 0px;font-size: 30px;font-family: 'Akaya Kanadaka', serif;text-align: center;transform: translate(20px) scale(0) skew(85deg);filter: brightness(0%) contrast(200%) invert(0%) saturate(13%) sepia(100%);--bs-primary: #1b5ebf;--bs-primary-rgb: 27,94,191;" class="userAdd">Connect Your Wallet to Continue ...</strong></div>
         </div>
     </div>
     <div class="container">
@@ -62,7 +62,7 @@
       await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner()
       var userAddress = await signer.getAddress();
-      document.getElementById("userAdd").innerText = "Connected with " + userAddress;
+      var userAdd = `Connected with <strong style="font-family: Aldrich, sans-serif;">${userAddress}</strong>`;
       provider.on("network", (newNetwork, oldNetwork) => {
         if (oldNetwork) {
             window.location.reload();
