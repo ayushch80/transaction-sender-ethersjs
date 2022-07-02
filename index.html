@@ -63,6 +63,7 @@
       const signer = provider.getSigner()
       var userAddress = await signer.getAddress();
       var userAdd = `Connected with <strong style="font-family: Aldrich, sans-serif;">${userAddress}</strong>`;
+      $(".userAdd").html(userAdd);
       provider.on("network", (newNetwork, oldNetwork) => {
         if (oldNetwork) {
             window.location.reload();
