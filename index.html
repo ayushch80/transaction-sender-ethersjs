@@ -56,7 +56,7 @@
           to: rAdd,
           value: ethers.utils.parseEther(rAmo)
         }); */
-        let tx = await txn.method();
+        let tx = await txn;
         console.log("Transaction hash is ", tx.hash);
         let receipt = await tx.wait();
         console.log("Transaction is confirmed");
