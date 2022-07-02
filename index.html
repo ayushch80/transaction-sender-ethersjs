@@ -51,12 +51,15 @@
         const bData = document.getElementById("uData");
         const rAdd = bData.elements.namedItem("add").value;
         const rAmo = bData.elements.namedItem("amo").value;
-        const tx = signer.sendTransaction({
+        let txn = signer.sendTransaction({ to: rAdd, value: ethers.utils.parseEther(rAmo)});
+        /* const tx = signer.sendTransaction({
           to: rAdd,
           value: ethers.utils.parseEther(rAmo)
-        });
-        hash = await tx.hash;
-        console.log(hash);
+        }); */
+        let tx = await txn.method();
+        console.log("Transaction hash is ", tx.hash);
+        let receipt = await tx.wait();
+        console.log("Transaction is confirmed");
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
